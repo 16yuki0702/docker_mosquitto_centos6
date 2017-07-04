@@ -57,6 +57,7 @@ RUN chkconfig --add mosquitto && \
 RUN cd /usr/local/src && \
 	git clone https://github.com/mbachry/mosquitto_pyauth.git && \
 	cd mosquitto_pyauth && \
+	git checkout 69f2ed7f537f827d7597c63605e81d106cbf7844 && \
 	make MOSQUITTO_SRC=/usr/local/src/mosquitto && \
 	cp auth_plugin_pyauth.so /var/lib/mosquitto/plugins/ && \
 	cp testauth.py /var/lib/mosquitto/plugins/ && \
